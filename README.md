@@ -1,68 +1,32 @@
 # online-offline-budget-tracker
 
-Unit 18 PWA Homework: Online/Offline Budget Trackers
-Add functionality to our existing Budget Tracker application to allow for offline access and functionality.
-The user will be able to add expenses and deposits to their budget with or without a connection. When entering transactions offline, they should populate the total when brought back online.
-Offline Functionality:
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
-Enter deposits offline
+<img src= "./public/assets/budgetTracker.png" alt= "App Demo" width="500px">
 
-Enter expenses offline
+## Description
 
-When brought back online:
+Track your budget on and offline! This application it demoing the ability to utilze indexedDB and service workers in conjunction
 
-Offline entries should be added to tracker.
+## Table Of Contents
 
-User Story
-AS AN avid traveller
-I WANT to be able to track my withdrawals and deposits with or without a data/internet connection
-SO THAT my account balance is accurate when I am traveling
+- [Installation](#Installation)
 
-Business Context
-Giving users a fast and easy way to track their money is important, but allowing them to access that information anytime is even more important. Having offline functionality is paramount to our applications success.
+* [Contributing](#Contributing)
 
-Acceptance Criteria
-GIVEN a user is on Budget App without an internet connection
-WHEN the user inputs a withdrawal or deposit
-THEN that will be shown on the page, and added to their transaction history when their connection is back online.
+* [Questions](#Questions)
 
-Starter Code
-You have been provided with a functional app in ./Develop. Your task is to update the app so that it is a PWA.
+## Installation
 
-Add code to /public/db.js to use the IndexedDB api to store transactions entered by the user when the app is offline and "sync" up with the server whenever the app goes online by posting any transactions that were stored while offline.
+There are none just check out the website here
+https://enigmatic-fjord-68032.herokuapp.com/
 
-Create a manifest.json file in /public.
+## Contributing
 
-Implement a service worker in /public/service-worker.js to support the required offline functionality.
+Make sure to leave a detailed description in your pull request
 
-Users should be able to "install" the app for a native-like experience.
+## Questions
 
-Add code in /public/index.js to register the service worker.
+<img src= "https://avatars2.githubusercontent.com/u/59327488?v=4" alt= "macias-daniel's avatar" width="100">
 
-Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-Your commit history is a signal to employers that you are actively working on projects and learning new skills
-
-Your commit history allows you to revert your code base in the event that you need to return to a previous state
-
-Follow these guidelines for committing:
-
-Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
-
-Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
-
-Don't commit half done work, for the sake of your collaborators (and your future self!)
-
-Test your application before you commit to ensure functionality at every step in the development process
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-Submission on BCS
-
-You are required to submit the following:
-
-the URL to the deployed application
-
-the URL to the Github repository
+Contact me at d.macias.apps@gmail.com if you have any questions about my project!
