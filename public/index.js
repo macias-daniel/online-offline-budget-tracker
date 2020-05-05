@@ -2,10 +2,9 @@
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/service-worker.js")
-      .then((reg) => {
-        console.log("Service worker registered.", reg);
-      });
+    navigator.serviceWorker.register("/service-worker.js").then((reg) => {
+      console.log("Service worker registered.", reg);
+    });
   });
 }
 
@@ -16,11 +15,11 @@ const transactionApi = createTransactionApi();
 
 initTransactions();
 
-document.querySelector("#add-btn").onclick = function() {
+document.querySelector("#add-btn").onclick = function () {
   sendTransaction(true);
 };
 
-document.querySelector("#sub-btn").onclick = function() {
+document.querySelector("#sub-btn").onclick = function () {
   sendTransaction(false);
 };
 
@@ -31,7 +30,7 @@ function createTransactionForm() {
 
   const showError = (message) => {
     errorEl.textContent = message;
-    
+
   };
 
   // return false if invalid and display validation message
@@ -74,7 +73,7 @@ function createTransactionApi() {
         "Content-Type": "application/json"
       }
     })
-      .then(response => {    
+      .then(response => {
         return response.json();
       });
   };
@@ -101,7 +100,7 @@ function sendTransaction(isAdding) {
   if (!transactionForm.validate()) {
     return;
   }
-  
+
   // create record
   const transaction = transactionForm.transaction();
 
@@ -117,7 +116,7 @@ function sendTransaction(isAdding) {
   populateChart();
   populateTable();
   populateTotal();
-  
+
   // also send to server
   transactionApi.create(transaction)
     .then(data => {
@@ -129,7 +128,7 @@ function sendTransaction(isAdding) {
       }
     })
     .catch(() => {
-    // fetch failed, so save in indexed db
+      // fetch failed, so save in indexed db
       saveRecord(transaction);
       transactionForm.clear();
     });
