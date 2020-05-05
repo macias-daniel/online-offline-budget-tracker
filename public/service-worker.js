@@ -12,8 +12,12 @@ const FILES_TO_CACHE = [
   "/manifest.json",
   "https://cdn.jsdelivr.net/npm/chart.js@2.8.0",
   "/db.js",
-  "/index.js"
+  "/index.js",
+  "/icons/icon-192x192.png",
+  "/icons/icon-512x512.png"
 ];
+
+
 
 const CACHE_NAME = "static-cache-v1";
 const DATA_CACHE_NAME = "data-cache-v1";
@@ -82,6 +86,6 @@ self.addEventListener("fetch", (evt) => {
   evt.respondWith(
     caches.match(evt.request).then((response) => {
       return response || fetch(evt.request);
-    })
+    }).catch((err) => console.log(err))
   );
 });
