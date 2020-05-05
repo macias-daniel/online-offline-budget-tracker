@@ -28,6 +28,8 @@ self.addEventListener("install", (evt) => {
     caches.open(CACHE_NAME).then((cache) => {
       console.log("Your files were pre-cached successfully!");
       return cache.addAll(FILES_TO_CACHE);
+    }).catch(err => {
+      console.log(err)
     })
   );
 
@@ -57,7 +59,7 @@ self.addEventListener("activate", (evt) => {
 // fetch
 self.addEventListener("fetch", (evt) => {
   // cache successful requests to the API
-  if (evt.request.url.includes("/api")) {
+  if (evt.request.url.includes("/api/")) {
     evt.respondWith(
       caches
         .open(DATA_CACHE_NAME)
